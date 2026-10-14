@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Admission</title>
+<style>
+body {
+    background: lightblue;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h2>Student Admission Form</h2>
+
+<form onsubmit="return submitForm()">
+<input id="name" placeholder="Student Name"><br><br>
+<input id="course" placeholder="Course"><br><br>
+<input id="email" placeholder="Email"><br><br>
+
+<button type="submit">Submit</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+function submitForm() {
+    let n = document.getElementById("name").value;
+    let c = document.getElementById("course").value;
+    let e = document.getElementById("email").value;
+
+    if (n == "" || c == "" || e == "") {
+        document.getElementById("result").innerHTML =
+        "Fill all fields!";
+    } else {
+        document.getElementById("result").innerHTML =
+        "Admission Submitted!<br>" +
+        "Name: " + n + "<br>" +
+        "Course: " + c + "<br>" +
+        "Email: " + e;
+    }
+    return false;
+}
+</script>
+
+</body>
+</html>
